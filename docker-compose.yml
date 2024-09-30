@@ -15,7 +15,6 @@ services:
       - '9229:9229'
     volumes:
       - .:/app
-      - /app/node_modules
     environment:
       - DATABASE_HOST=postgres
       - DATABASE_PORT=5432
