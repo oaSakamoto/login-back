@@ -13,7 +13,10 @@ async function bootstrap() {
       transform: true,
     }),
   );
-
+  app.enableCors({
+    origin: 'http://localhost:5173', // URL do seu frontend (ajuste se necessário)
+    credentials: true,
+  });
   const config = new DocumentBuilder()
     .setTitle('Login API')
     .setDescription('Uma API simples para autenticação e registro de usuários')
