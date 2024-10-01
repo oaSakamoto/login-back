@@ -7,3 +7,18 @@ generator client {
   provider = "prisma-client-js"
   output   = "./generated/mongodb"
 }
+
+model Log {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  timestamp    DateTime
+  method       String
+  url          String
+  statusCode   Int
+  ip           String?
+  userId       String?
+  responseTime Int
+  userAgent    String?
+  requestBody  String?  // Apenas para logs de erro
+  error        String?  // Apenas para logs de erro
+  isError      Boolean  @default(false)
+}
