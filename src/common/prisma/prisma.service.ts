@@ -1,5 +1,5 @@
-import { Injectable, OnModuleDestroy, OnModuleInit } from "@nestjs/common";
-import {PrismaClient as PrismaClientPostgres} from '../../../prisma/generate/postgres';
+import { Injectable, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
+import { PrismaClient as PrismaClientPostgres } from '../../../prisma/generate/postgres';
 
 @Injectable()
 export class PrismaService implements OnModuleInit, OnModuleDestroy {
@@ -10,11 +10,11 @@ export class PrismaService implements OnModuleInit, OnModuleDestroy {
   }
 
   async onModuleInit() {
-      await this.postgresClient.$connect();
+    await this.postgresClient.$connect();
   }
 
   async onModuleDestroy() {
-      await this.postgresClient.$disconnect();
+    await this.postgresClient.$disconnect();
   }
 
   get postgres() {

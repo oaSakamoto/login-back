@@ -1,7 +1,14 @@
-import { registerDecorator, ValidationOptions, ValidationArguments } from 'class-validator';
+import {
+  registerDecorator,
+  ValidationOptions,
+  ValidationArguments,
+} from 'class-validator';
 
-export function PasswordMatch(property: string, validationOptions?: ValidationOptions) {
-  return function (object: Object, propertyName: string) {
+export function PasswordMatch(
+  property: string,
+  validationOptions?: ValidationOptions,
+) {
+  return function (object: object, propertyName: string) {
     registerDecorator({
       name: 'passwordMatch',
       target: object.constructor,
